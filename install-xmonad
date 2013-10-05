@@ -20,6 +20,11 @@
 echo "Installing required packages..."
 sudo apt-get install xmonad libghc-xmonad-dev libghc-xmonad-contrib-dev xmobar xcompmgr nitrogen stalonetray moreutils synapse ssh-askpass-gnome thunar terminator remmina
 
+echo "Installing additional packages..."
+sudo add-apt-repository ppa:indicator-brightness/ppa
+sudo apt-get update
+sudo apt-get install indicator-brightness
+
 echo "Creating xmonad xsession configuration..."
 sudo mv /usr/share/xsessions/xmonad.desktop /usr/share/xsessions/xmonad.desktop.original
 sudo cp ~/.xmonad/xmonad.desktop /usr/share/xsessions

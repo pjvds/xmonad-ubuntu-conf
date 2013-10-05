@@ -9,6 +9,12 @@
 # Repository: https://github.com/davidbrewer/xmonad-ubuntu-conf
 
 #
+# Gnome settings daemon, this will make the macbook functions keys
+# work again, like brightness and sound
+#
+gnome-settings-daemon &
+
+#
 # TRAY ICON SOFTWARE
 #
 
@@ -35,6 +41,11 @@ fi
 # Applet for managing screen brightness from the tray.
 if [ -z "$(pgrep /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness)" ] ; then
     /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness &
+fi
+
+# Applet for managing volume from the tray.
+if [ -z "$(pgrep gnome-volume-control-applet)" ] ; then
+    gnome-volume-control-applet &
 fi
 
 #

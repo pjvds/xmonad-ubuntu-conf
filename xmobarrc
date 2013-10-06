@@ -47,7 +47,7 @@ Config {
     -- to just remove this section entirely.
     Run BatteryP ["BAT0"] ["-t", "Bat: <left>%", "--", "-c", "energy_full"] 10,
     
-    -- Run Network "eth0" ["-L","0","-H","32","-n","green","-h","red"] 10
+    Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10,
 
     -- To get volume information, we run a custom bash script.
     -- This is because the built-in volume support in xmobar is disabled
@@ -68,5 +68,5 @@ Config {
 
    -- Overall template for the layout of the xmobar contents. Note that
    -- space is significant and can be used to add padding.
-   template = "%StdinReader% }{ %battery% | %cpu% | %memory% | Vol: %myvolume%    <fc=#e6744c>%date%</fc>     "
+   template = "%StdinReader% }{ %battery% | %eth0% | %cpu% | %memory% | Vol: %myvolume%    <fc=#e6744c>%date%</fc>     "
 }

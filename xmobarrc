@@ -45,15 +45,7 @@ Config {
     -- Battery information. This is likely to require some customization
     -- based upon your specific hardware. Or, for a desktop you may want
     -- to just remove this section entirely.
-    Run Battery [
-      "-t", "<acstatus>: <left>%", 
-      "--", 
-      "-c", "charge_full",
-      "-O", "AC",
-      "-o", "Bat",
-      "-h", "green",
-      "-l", "red"
-    ] 10,
+    Run BatteryP ["BAT0"] ["-t", "Bat: <left>%", "--", "-c", "energy_full"] 10,
     
     -- Run Network "eth0" ["-L","0","-H","32","-n","green","-h","red"] 10
 

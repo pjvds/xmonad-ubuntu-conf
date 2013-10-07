@@ -118,7 +118,7 @@ defaultLayouts = smartBorders(avoidStruts(
   -- and remaining windows tile on the right. By default each area
   -- takes up half the screen, but you can resize using "super-h" and
   -- "super-l".
-  ResizableTall 1 (3/100) (1/2) []
+  ResizableTall 1 (3/100) (3/5) []
 
   -- Mirrored variation of ResizableTall. In this layout, the large
   -- master window is at the top, and remaining windows tile at the

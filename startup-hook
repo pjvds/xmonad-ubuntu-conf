@@ -38,11 +38,6 @@ if [ -z "$(pgrep system-config-printer-applet)" ] ; then
     system-config-printer-applet &
 fi
 
-# Applet for managing screen brightness from the tray.
-if [ -z "$(pgrep /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness)" ] ; then
-    /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness &
-fi
-
 #
 # APPLICATION LAUNCHER
 #

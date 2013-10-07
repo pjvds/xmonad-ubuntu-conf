@@ -36,7 +36,7 @@ Config {
 
     -- Gather and format memory usage information
     Run Memory [
-      "-t","Mem: <usedratio>%"
+      "-t","M: <usedratio>%"
     ] 10,
 
     -- Date formatting
@@ -45,7 +45,7 @@ Config {
     -- Battery information. This is likely to require some customization
     -- based upon your specific hardware. Or, for a desktop you may want
     -- to just remove this section entirely.
-    Run BatteryP ["BAT0"] ["-t", "Bat: <left>%", "--", "-c", "energy_full"] 10,
+    Run BatteryP ["BAT0"] ["-t", "B: <left>%", "--", "-c", "energy_full"] 10,
     
     Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10,
 
@@ -68,5 +68,5 @@ Config {
 
    -- Overall template for the layout of the xmobar contents. Note that
    -- space is significant and can be used to add padding.
-   template = "%StdinReader% }{ %battery% | %eth0% | %cpu% | %memory% | Vol: %myvolume%    <fc=#e6744c>%date%</fc>     "
+   template = "%StdinReader% }{ %battery% | %eth0% | %cpu% | %memory% | V: %myvolume%    <fc=#e6744c>%date%</fc>     "
 }

@@ -43,11 +43,6 @@ if [ -z "$(pgrep /opt/extras.ubuntu.com/indicator-brightness/indicator-brightnes
     /opt/extras.ubuntu.com/indicator-brightness/indicator-brightness &
 fi
 
-# Applet for managing volume from the tray.
-if [ -z "$(pgrep gnome-volume-control-applet)" ] ; then
-    gnome-volume-control-applet &
-fi
-
 #
 # APPLICATION LAUNCHER
 #

@@ -46,9 +46,20 @@ xcompmgr -n &
 # If we find that a screen is connected via DVI, activate it and position it
 # to the left of the primary screen.
 #xrandr | grep 'DP-1 connected' | ifne xrandr --output DP-1 --auto --left-of LVDS-1
-xrandr --output eDP-1 --mode 1680x1050
-xrandr --output eDP-2 --mode 1680x1050
+#xrandr --output eDP-1 --mode 1680x1050
 
+
+# Find primary display
+primaryDisplay=$(xrandr -q | grep '\bconnected' | grep 'eDP' | awk '{print $1}')
+if [[ $primaryDisplay ]] ; then
+    xrandr --output $primaryDisplay --mode 1680x1050
+fi
+
+# Find secondary display
+secondaryDisplay=$(xrandr -q | grep '\bconnected' | grep '\bDP' | awk '{print $1}')
+if [[ $secondaryDisplay ]] ; then
+    xrandr --output $secondaryDisplay --mode 2560x1440 --left-of $primaryDisplay
+fi
 
 #
 # LOAD SCREEN BACKGROUNDS
@@ -101,4 +112,3 @@ gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
 
 # Now, finally, start xmonad
 exec xmonad
-

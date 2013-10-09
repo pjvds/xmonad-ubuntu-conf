@@ -50,15 +50,15 @@ xcompmgr -n &
 
 
 # Find primary display
-primaryDisplay=$(xrandr -q | grep '\bconnected' | grep 'eDP' | awk '{print $1}')
-if [[ $primaryDisplay ]] ; then
-    xrandr --output $primaryDisplay --mode 1680x1050
+export X_PRIMARY_DISPLAY=$(xrandr -q | grep '\bconnected' | grep 'eDP' | awk '{print $1}')
+if [[ $X_PRIMARY_DISPLAY ]] ; then
+    xrandr --output $X_PRIMARY_DISPLAY --mode 1920x1200
 fi
 
 # Find secondary display
-secondaryDisplay=$(xrandr -q | grep '\bconnected' | grep '\bDP' | awk '{print $1}')
-if [[ $secondaryDisplay ]] ; then
-    xrandr --output $secondaryDisplay --mode 2560x1440 --left-of $primaryDisplay
+export X_SECONDARY_DISPLAY=$(xrandr -q | grep '\bconnected' | grep '\bDP' | awk '{print $1}')
+if [[ $X_SECONDARY_DISPLAY ]] ; then
+    xrandr --output $X_SECONDARY_DISPLAY --mode 2560x1440 --left-of $X_PRIMARY_DISPLAY
 fi
 
 #
